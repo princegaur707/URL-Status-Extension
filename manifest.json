@@ -5,7 +5,7 @@
         },
     
  "name":"Malicious Url Detector",
- "description":"Malicious Url Detector",
+ "description":"Detects the URL's liability",
  "version":"1.0.0",
  "icons":{"128":"anti.png"},
  "browser_action": {
