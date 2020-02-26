@@ -19,21 +19,13 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true, 'currentWindow': t
             })
             .then((myJson) => {
                 obj = myJson;
-                if(obj.malware == false)
-                {
-                    
-                    document.body.style.backgroundColor = "red";
-                }
-                else if (obj.malware == true)
+                //alert(obj.malware)
+                if (obj.malware == true)
                 {
                     alert("Malware Detected!!");
-                    if (window.confirm("Do you want to leave?")) { 
-                        window.open("https://www.google.com", "Thanks for using our web application!");
+                    if (window.confirm("Do you want to leave this unsafe site? \n\nThis site is not safe!!")) { 
+                        window.open("https://www.google.com/", "You have been re-directed to a safe site!!");
                       }
-                    //window.alert("No MALWARE");               
-
-                    document.body.style.backgroundColor = "green";
-
                 }
 
             });
