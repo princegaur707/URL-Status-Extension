@@ -2,14 +2,15 @@
 
 chrome.tabs.query({'active': true, 'lastFocusedWindow': true, 'currentWindow': true}, function (tabs) {
     var url = tabs[0].url;
-    theUrl="https://malicious-url-detectorv5.herokuapp.com/api?query="+url;
-    theUrl2="https://malicious-url-detectorv5.herokuapp.com/result?url="+url;
+    theUrl="https://mudv7.eu-gb.cf.appdomain.cloud/api?query="+url;
+    theUrl2="https://mudv7.eu-gb.cf.appdomain.cloud/result?url="+url;
     //console.log(url);
     //alert ("Hello")
   
     if (url!="chrome://newtab/")
     {
         fetch(theUrl2)
+
         //console.log("Script Started");
         var obj;
 
@@ -22,14 +23,15 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true, 'currentWindow': t
                 //alert(obj.malware)
                 if (obj.malware == true)
                 {
-                    alert("Malware Detected!!");
+                    alert("Malicious URL Detected !! \n\n"+url+"\n");
                     if (window.confirm("Do you want to leave this unsafe site? \n\nThis site is not safe!!")) { 
                         window.open("https://www.google.com/", "You have been re-directed to a safe site!!");
                       }
                 }
 
             });
-        console.log(obj);
+        //console.log(obj);
+
         
         
     }
